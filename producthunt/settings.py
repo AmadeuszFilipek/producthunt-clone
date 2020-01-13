@@ -18,16 +18,20 @@ AWS_STORAGE_BUCKET_NAME = 'amadeusz-filipek-producthunt'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+STATIC_ROOT = 'static'
+MEDIA_ROOT = 'media'
+MEDIA_URL = "https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_ROOT}/"
+STATIC_URL = "https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_ROOT}/"
+
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
-# DEFAULT_FILE_STORAGE = 'producthunt.storage_backends.MediaStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 # for fixing the login authentication in boto3 for the bucket
 AWS_DEFAULT_ACL = None
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com']
 
