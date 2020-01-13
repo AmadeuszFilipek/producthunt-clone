@@ -33,6 +33,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
+DEFAULT_FILE_STORAGE = 'producthunt.storage_backends.MediaStorage'
 
 # for fixing the login authentication in boto3 for the bucket
 AWS_DEFAULT_ACL = None
