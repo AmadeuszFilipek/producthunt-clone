@@ -21,7 +21,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATIC_ROOT = 'static'
 MEDIA_ROOT = 'media'
 MEDIA_URL = "https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_ROOT}/"
-STATIC_URL = "https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_ROOT}/"
+STATIC_URL = "static"
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
@@ -31,7 +31,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_DEFAULT_ACL = None
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com']
 
