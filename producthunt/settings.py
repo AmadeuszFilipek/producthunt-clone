@@ -18,10 +18,11 @@ AWS_STORAGE_BUCKET_NAME = 'amadeusz-filipek-producthunt'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
-STATIC_ROOT = 'static'
+
 MEDIA_ROOT = 'media'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = "https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_ROOT}/"
-STATIC_URL = "static"
+STATIC_URL = '/static/'
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
