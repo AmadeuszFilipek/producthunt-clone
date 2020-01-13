@@ -24,6 +24,8 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 # for fixing the login authentication in boto3 for the bucket
 AWS_DEFAULT_ACL = None
+# AWS_S3_REGION_NAME = 'us-east-2' #change to your region
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
